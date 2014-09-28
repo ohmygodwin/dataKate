@@ -2,6 +2,14 @@ int queryDelay = 1200;
 
 int[] doASearchYears(String q, int startYear, int endYear) {
   int[] counts = new int[endYear - startYear];
+  
+//  Table mediaTable;
+//  mediaTable = new Table();
+//  mediaTable.addColumn("year");
+//  mediaTable.addColumn("url");
+//  mediaTable.addColumn("width");
+//  mediaTable.addColumn("height");
+  
   int i = startYear;
   while (i < endYear) {
     println(i);
@@ -9,12 +17,38 @@ int[] doASearchYears(String q, int startYear, int endYear) {
       ASResult r = doASearch(q, i + "0101", i + "1231");
       println(r.hits);
       counts[i - startYear] = r.hits;
+      
+      int totalDocs = r.docs.length;
+      
+      for (int j = 0; j < totalDocs; j++) {
+        JSONObject doc = r.docs[j].docJSON;
+        JSONArray multimedia = doc.getJSONArray("multimedia");
+        //println(multimedia);
+         
+        for (int k = 0; k < multimedia.size(); k++) {
+       
+          JSONObject media = multimedia.getJSONObject(k);
+          if (media.getString("type").equals("image")) {
+            println(media.getString("url"));
+            //println(media.getInt("width"));
+            println(media.getInt("height"));
+            
+            //TableRow newRow = mediaTable.addRow();
+            //newRow.setInt("year", i);
+            //newRow.setString("url", media.getString("url"));
+            //newRow.setInt("width", media.getInt("width"));
+            //newRow.setInt("height", media.getInt("height"));
+          }
+        }
+      }
+      
       delay(queryDelay);
       i++;
     } catch (Exception e) {
      println("FAILED ON " + i + ". IF YOU SEE THIS MESSAGE A BUNCH OF TIMES IN A ROW, TRY AGAIN LATER, OR WITH A DIFFERENT QUERY. \n AND MAKE SURE YOU'VE ENTERED YOUR API KEY!"); 
     }
   }
+  //saveTable(mediaTable, "data/plaidMedia.csv");
   return(counts);
 }
 
@@ -62,7 +96,8 @@ class ASDoc {
   String headline;
   int page;
   String snippet;
-
+  JSONArray[] images;
+  
 
   void parse() {
     headline = docJSON.getJSONObject("headline").getString("main");
