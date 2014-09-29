@@ -25,6 +25,8 @@ void draw() {
   //renderGrid(counts, 10, 25, 10);
   //renderImages();
   renderStripes();
+  filter(GRAY);
+  filter(BLUR, 4);
 }
 
 //void loadRiotData() {

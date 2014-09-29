@@ -50,7 +50,7 @@ int[] doASearchYears(String q, int startYear, int endYear) {
      println("FAILED ON " + i + ". IF YOU SEE THIS MESSAGE A BUNCH OF TIMES IN A ROW, TRY AGAIN LATER, OR WITH A DIFFERENT QUERY. \n AND MAKE SURE YOU'VE ENTERED YOUR API KEY!"); 
     }
   }
-  saveTable(mediaTable, "data/riotgearMedia.csv");
+  saveTable(mediaTable, "data/ginghamMedia.csv");
   return(counts);
 }
 
