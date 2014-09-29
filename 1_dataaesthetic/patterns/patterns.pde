@@ -30,7 +30,7 @@ void draw() {
 }
 
 void loadPatternData() {
-  Table myTable = loadTable("herringboneMedia2.csv", "header");
+  Table myTable = loadTable("ginghamMedia2.csv", "header");
   absTR = new int[myTable.getRowCount()];
   yearsTR = new int[myTable.getRowCount()];
   urlsTR = new String[myTable.getRowCount()];
@@ -76,7 +76,7 @@ void renderStripes() {
     webImg = loadImage(url, "jpg");
     
     int scale_ = absTR[i];
-    float scaleW = map(scale_, 27, 64, 10, 30);
+    float scaleW = map(scale_, 18, 67, 20, 80);
     webImg.resize(int(scaleW), 0);
     
     float sizeW = webImg.width;

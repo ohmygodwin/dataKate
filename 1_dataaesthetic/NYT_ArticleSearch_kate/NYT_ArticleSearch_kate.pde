@@ -18,7 +18,7 @@ void setup() {
   background(255);
   
   //This function returns a list of integers, counting a search term per year
-  int[] monkeyCounts = doASearchYears("\"gingham\"", 2007, 2013);
+  int[] monkeyCounts = doASearchYears("\"herringbone\"", 2007, 2013);
   
   //Which we can draw a bar chart from:
   for (int i = 0; i < monkeyCounts.length; i++) {
@@ -38,7 +38,7 @@ void setup() {
   }
   
   //It's often useful to save data like this (so we don't have to call the API every time once we're visualizing)
-  PrintWriter writer = createWriter("data/gingham.csv");
+  PrintWriter writer = createWriter("data/herringbone.csv");
   for (int i:monkeyCounts) writer.println(i);
   writer.flush();
   writer.close();
