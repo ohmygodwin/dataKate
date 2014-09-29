@@ -3,12 +3,12 @@ int queryDelay = 1200;
 int[] doASearchYears(String q, int startYear, int endYear) {
   int[] counts = new int[endYear - startYear];
   
-//  Table mediaTable;
-//  mediaTable = new Table();
-//  mediaTable.addColumn("year");
-//  mediaTable.addColumn("url");
-//  mediaTable.addColumn("width");
-//  mediaTable.addColumn("height");
+  Table mediaTable;
+  mediaTable = new Table();
+  mediaTable.addColumn("year");
+  mediaTable.addColumn("url");
+  //mediaTable.addColumn("width");
+  mediaTable.addColumn("height");
   
   int i = startYear;
   while (i < endYear) {
@@ -33,11 +33,13 @@ int[] doASearchYears(String q, int startYear, int endYear) {
             //println(media.getInt("width"));
             println(media.getInt("height"));
             
-            //TableRow newRow = mediaTable.addRow();
-            //newRow.setInt("year", i);
-            //newRow.setString("url", media.getString("url"));
-            //newRow.setInt("width", media.getInt("width"));
-            //newRow.setInt("height", media.getInt("height"));
+            if (media.getInt("height") > 126) {
+              TableRow newRow = mediaTable.addRow();
+              newRow.setInt("year", i);
+              newRow.setString("url", media.getString("url"));
+              //newRow.setInt("width", media.getInt("width"));
+              newRow.setInt("height", media.getInt("height"));
+            }
           }
         }
       }
@@ -48,7 +50,7 @@ int[] doASearchYears(String q, int startYear, int endYear) {
      println("FAILED ON " + i + ". IF YOU SEE THIS MESSAGE A BUNCH OF TIMES IN A ROW, TRY AGAIN LATER, OR WITH A DIFFERENT QUERY. \n AND MAKE SURE YOU'VE ENTERED YOUR API KEY!"); 
     }
   }
-  //saveTable(mediaTable, "data/plaidMedia.csv");
+  saveTable(mediaTable, "data/riotgearMedia.csv");
   return(counts);
 }
 
