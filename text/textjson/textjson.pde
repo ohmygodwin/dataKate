@@ -33,7 +33,9 @@ JSONArray getMatches(String s, String corpus) {
 void renderResults(JSONArray results) {
   
  for (int i = 0; i < results.size(); i++) {
-   String seg = results.getJSONObject(i).getString("segment");
+   JSONObject result = results.getJSONObject(i);
+   String seg = result.getString("segment");
+   //String seg = results.getJSONObject(i).getString("segment");
    //println(seg);
    fill(0);
    text(seg, 50, 50 + (i*20));
