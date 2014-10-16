@@ -93,16 +93,40 @@ def strip_letters(ls):
 
 # TESTING  results 
 # i do not correct for the '2'
-line = """#include <iostream>
 
- int main()
+#C++
+line = """#include < i o stream>
+
+ ent main()
  {
- 	std::cout << "Hello, World.";
+ 	stood:: c out << "Hello, World.";
+ }"""
+ 
+print parseStressOfLine(line)
+
+#Java
+line = """public class Hello {
+  	public static void main(String []args) {
+ 		System . out . print line ("Hello World");
+  	}
  }"""
 print parseStressOfLine(line)
-line = "Apollo play'd the midwife's part;"
+
+#JavaScript popup
+line = """alert("Hello, World");"""
 print parseStressOfLine(line)
-line = "Into the world Corinna fell,"
+
+#LISP
+line = """(DE FUN HELLO - WORLD ()
+	(PRINT (LIST ' HELLO ' WORLD)))"""
+print parseStressOfLine(line)
+
+#Python
+line = """print "hello world" """
+print parseStressOfLine(line)
+
+#Ruby
+line = """puts "Hello, world" """
 print parseStressOfLine(line)
 
 
