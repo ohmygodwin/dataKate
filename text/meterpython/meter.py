@@ -34,7 +34,7 @@ def parseStressOfLine(line):
         if word not in prondict:
             # if word is not in dictionary
             # add it to the string that includes punctuation
-            stress= stress+"*"+word+"*"
+            stress= stress+word
         else:
             zero_bool=True
             for s in prondict[word]:
@@ -53,7 +53,7 @@ def parseStressOfLine(line):
                 stress_no_punct=stress_no_punct + strip_letters(prondict[word][0])
 
         if len(punct)>0:
-            stress= stress+"*"+punct+"*"
+            stress= stress+punct
 
     return {'stress':stress,'stress_no_punct':stress_no_punct}
 
@@ -94,40 +94,98 @@ def strip_letters(ls):
 # TESTING  results 
 # i do not correct for the '2'
 
-#C++
-line = """#include < i o stream>
+##C++
+#line = """#include < i o stream>
+#
+# ent main()
+# {
+# 	stood:: c out << "Hello, World.";
+# }"""
+# 
+#print parseStressOfLine(line)
+#
+##Java
+#line = """public class Hello {
+#  	public static void main(String []args) {
+# 		System . out . print line ("Hello World");
+#  	}
+# }"""
+#print parseStressOfLine(line)
+#
+##JavaScript popup
+#line = """alert("Hello, World");"""
+#print parseStressOfLine(line)
+#
+##LISP
+#line = """(DE FUN HELLO - WORLD ()
+#	(PRINT (LIST ' HELLO ' WORLD)))"""
+#print parseStressOfLine(line)
+#
+##Python
+#line = """print "hello world" """
+#print parseStressOfLine(line)
+#
+##Ruby
+#line = """puts "Hello, world" """
+#print parseStressOfLine(line)
 
- ent main()
- {
- 	stood:: c out << "Hello, World.";
- }"""
- 
-print parseStressOfLine(line)
+#The Seafarer
+#line = """May I for my own self song's truth reckon,
+#Journey's jargon, how I in harsh days
+#Hardship endured oft.
+#Bitter breast cares have I abided,
+#Known on my keel many a care's hold,
+#And dire sea surge, and there I oft spent
+#Narrow night watch nigh the ship's head
+#While she tossed close to cliffs. Coldly afflicted,
+#My feet were by frost be numbed.
+#Chill its chains are; chafing sighs
+#Hew my heart round and hunger begot
+#Mere weary mood. Lest man know not
+#That he on dry land love liest live eth,
+#List how I, care wretched, on ice cold sea,
+#Weathered the winter, wretched outcast
+#Deprived of my kin men;"""
+#print parseStressOfLine(line)
 
-#Java
-line = """public class Hello {
-  	public static void main(String []args) {
- 		System . out . print line ("Hello World");
-  	}
- }"""
-print parseStressOfLine(line)
+#Processing
+#line = """void setup() {
+#    size(five hundred, five hundred);
+#    print line ("hello, world");
+#}
+#
+#void draw() {
+#}"""
+#print parseStressOfLine(line)
 
-#JavaScript popup
-line = """alert("Hello, World");"""
-print parseStressOfLine(line)
+line = """float x, y, speed;
 
-#LISP
-line = """(DE FUN HELLO - WORLD ()
-	(PRINT (LIST ' HELLO ' WORLD)))"""
-print parseStressOfLine(line)
+void setup() {
+  size( four thirty, four thirty );
+  background( thirty );
+}
 
-#Python
-line = """print "hello world" """
-print parseStressOfLine(line)
+void draw() {
+  render Pattern();
+}
 
-#Ruby
-line = """puts "Hello, world" """
-print parseStressOfLine(line)
+void render Pattern() {
+  speed plus equals point o o four;
+
+  push Matrix();
+    translate( width divided by two, height divided by two );
+    
+    for (ent i equals zero; i less than one hundred; i plus equals five) {
+      x equals sine ( ( speed plus i ) times two hundred ) times two hundred;
+      y equals co sine ( speed plus i ) times two hundred;
+      
+      no Stroke();
+      fill( one hundred ninety six, two hundred five, two hundred two, one hundred );
+      ellipse( x, y, two, two );
+    }
+  pop Matrix();
+}"""
+print parseStressOfLine(line);
 
 
 #""" 
