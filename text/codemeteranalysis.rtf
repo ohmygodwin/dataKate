@@ -326,13 +326,13 @@ void render Pattern() \{\
     \}\
   pop Matrix();\
 \}\
-\{'stress': u'\
+\
 \
 1 1, 1, 1;\
 \
 1 11() \{\
-	1( 110,110);\
-	12( 10 );\
+	1( 110, 110 );\
+	11( 10 );\
 \}\
 \
 11() \{\
@@ -340,23 +340,23 @@ void render Pattern() \{\
 \}\
 \
 1 1010() \{\
-11101111;\
+	1 110 1111;\
 \
-110();\
-01(101011, 101011);\
+	110();\
+		01( 1 010 1 1, 1 010 1 1 );\
 \
-0 (111010; 110110; 11101) \{\
-1101((111)1110)1110;\
-11011(111)1110;\
+		0 ( 1 1 10 10; 1 1 0 110; 1 110 1) \{\
+			1 10 1( ( 1 1 1 ) 1 110) 1 110;\
+			1 10 11( 1 1 1 ) 1 110;\
 \
-11();\
-1(110101, 1101 , 1101, 110);\
-01(1,1,1,1);\
+			11();\
+			1(110101, 1101 , 1101, 110);\
+			01( 1, 1, 1, 1 );\
+		\}\
+	110();\
 \}\
-110();\
-\}\
 \
-', 'stress_no_punct': u'11111121110110121011101011010111011111100110101110101101110101101101110111011111110111011011111111011111010111011101110011111110'\}\
+\
 \
 1111\
 \
@@ -374,6 +374,115 @@ void render Pattern() \{\
 01101011101011\
 \
 011101011011011101\
+\
+\
+_____________________\
+\
+\
+\
+float x, y, speed;\
+\
+void setup() \{\
+  size( four thirty, four thirty );\
+  background( thirty );\
+\}\
+\
+void draw() \{\
+  render Pattern();\
+\}\
+\
+void render Pattern() \{\
+  speed plus equals point o o four;\
+\
+  push Matrix();\
+    translate( width divided by two, height divided by two );\
+    \
+    for (ent i equals zero; i less than one hundred; i plus equals five) \{\
+      x equals sine ( ( speed plus i ) times two hundred ) times two hundred;\
+      y equals co sine ( speed plus i ) times two hundred;\
+      \
+      no Stroke();\
+      fill( two thirty, two thirty, two thirty, one thirty );\
+      ellipse( x, y, two, two );\
+    \}\
+  pop Matrix();\
+\}\
+\
+\
+1 1, 1, 1;\
+\
+1 11() \{\
+	1( 110, 110 );\
+	11( 10 );\
+\}\
+\
+11() \{\
+	1010();\
+\}\
+\
+1 1010() \{\
+	1 110 1111;\
+\
+	110();\
+		01( 1 010 1 1, 1 010 1 1 );\
+\
+		0 ( 1 1 10 10; 1 1 0 110; 1 110 1) \{\
+			1 10 1( ( 1 1 1 ) 1 110) 1 110;\
+			1 10 11( 1 1 1 ) 1 110;\
+\
+			11();\
+			1(110, 110, 110, 110);\
+			01( 1, 1, 1, 1 );\
+		\}\
+	110();\
+\}\
+\
+\
+float x, y, speed;\
+\
+void setup() \{\
+  size( four thirty, four thirty );\
+  background( thirty );\
+\}\
+\
+void draw() \{\
+  renderPattern();\
+\}\
+\
+void renderPattern() \{\
+  speed plus equals point o o four;\
+\
+  pushMatrix();\
+    translate( width divided by two, height divided by two );\
+    \
+    for (int i equals zero; i less than one hundred; i plus equals five) \{\
+      x equals sine ( ( speed plus i ) times two hundred ) times two hundred;\
+      y equals co sine ( speed plus i ) times two hundred;\
+      \
+      noStroke();\
+      fill( two thirty, two thirty, two thirty, one thirty );\
+      ellipse( x, y, two, two );\
+    \}\
+  popMatrix();\
+\}\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
 \
 \
 \

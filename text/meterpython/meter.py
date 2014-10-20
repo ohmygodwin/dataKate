@@ -180,7 +180,7 @@ void render Pattern() {
       y equals co sine ( speed plus i ) times two hundred;
       
       no Stroke();
-      fill( one hundred ninety six, two hundred five, two hundred two, one hundred );
+      fill( two thirty, two thirty, two thirty, one thirty );
       ellipse( x, y, two, two );
     }
   pop Matrix();
